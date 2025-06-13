@@ -23,51 +23,52 @@ canvas.style.height = `${displayHeight}px`;
 let totalPixels = canvas.width * canvas.height;
 
 async function loadSVGtoCanvasHighRes(url, themeBaseColor = 'white') {
-    const response = await fetch(url);
-    const svgText = await response.text();
-    const svgBlob = new Blob([svgText], { type: 'image/svg+xml' });
-    const urlObject = URL.createObjectURL(svgBlob);
-    const img = new Image();
-    img.onload = () => {
-        const aspectRatio = img.width / img.height;
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await fetch(url);
+            const svgText = await response.text();
+            const svgBlob = new Blob([svgText], { type: 'image/svg+xml' });
+            const urlObject = URL.createObjectURL(svgBlob);
+            const img = new Image();
 
-        // Calculate scaled width from full height
-        const displayHeight = window.innerHeight;
-        const displayWidth = displayHeight * aspectRatio;
+            img.onload = () => {
+                const aspectRatio = img.width / img.height;
 
-        // Update canvas size to match
-        canvas.style.width = `${displayWidth}px`;
-        canvas.width = displayWidth * scaleFactor;
+                const displayHeight = window.innerHeight;
+                const displayWidth = displayHeight * aspectRatio;
 
-        // Update height again to ensure canvas still matches height
-        canvas.height = displayHeight * scaleFactor;
+                canvas.style.width = `${displayWidth}px`;
+                canvas.width = displayWidth * scaleFactor;
+                canvas.height = displayHeight * scaleFactor;
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = themeBaseColor;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = themeBaseColor; // or theme base color
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        // Draw image to fit exactly, horizontally centered
-        ctx.drawImage(
-            img,
-            0, 0,
-            canvas.width,
-            canvas.height
-        );
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-        URL.revokeObjectURL(urlObject);
-        backgroundImage = img;
+                URL.revokeObjectURL(urlObject);
+                backgroundImage = img;
 
-        initialImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        workingImageData = ctx.createImageData(initialImageData);
-        workingImageData.data.set(initialImageData.data);
+                initialImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                workingImageData = ctx.createImageData(initialImageData);
+                workingImageData.data.set(initialImageData.data);
 
-        totalPixels = canvas.width * canvas.height;
-        console.log("Image loaded:", url);
-    };
-    img.onerror = () => {
-        console.error("Image failed to load:", url);
-    };
-    img.src = urlObject + '?t=' + Date.now();
+                totalPixels = canvas.width * canvas.height;
+
+                resolve();  // <- resolves only after all drawing is done
+            };
+
+            img.onerror = () => {
+                console.error("Image failed to load:", url);
+                reject(new Error("Image load failed"));
+            };
+
+            img.src = urlObject + '?t=' + Date.now();
+        } catch (err) {
+            reject(err);
+        }
+    });
 }
 
 const brushButtonMapping = {
@@ -850,6 +851,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Load initial SVG
+    console.log("Calling applyTheme...");
     await applyTheme(getThemeFromAnswers()); // Change to desired theme group name
+    console.log("Theme applied.");
 // Canvas setup - ends here
 });
