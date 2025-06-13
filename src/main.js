@@ -64,7 +64,7 @@ async function loadSVGtoCanvasHighRes(url, themeBaseColor = 'white') {
                 reject(new Error("Image load failed"));
             };
 
-            img.src = urlObject + '?t=' + Date.now();
+            img.src = urlObject;
         } catch (err) {
             reject(err);
         }
