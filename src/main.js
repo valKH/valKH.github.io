@@ -141,14 +141,14 @@ async function applyTheme(groupName) {
 
 // themes
 const themes = {
-    a3th_years_man: {
-        bodySVG: '../svgs/themes/3th_years_man/3th_years_man.svg',
+    oldman: {
+        bodySVG: '../svgs/themes/oldman/oldman.svg',
         brushes: {
-            vortex: '../svgs/themes/3th_years_man/vortex_chosen.svg',
-            pucker: '../svgs/themes/3th_years_man/pucker_chosen.svg',
-            smudge: '../svgs/themes/3th_years_man/smudge_chosen.svg',
-            bloat: '../svgs/themes/3th_years_man/bloat_chosen.svg',
-            reconstruct: '../svgs/themes/3th_years_man/reconstruct_chosen.svg'
+            vortex: '../svgs/themes/oldman/vortex_chosen.svg',
+            pucker: '../svgs/themes/oldman/pucker_chosen.svg',
+            smudge: '../svgs/themes/oldman/smudge_chosen.svg',
+            bloat: '../svgs/themes/oldman/bloat_chosen.svg',
+            reconstruct: '../svgs/themes/oldman/reconstruct_chosen.svg'
         },
         backgroundColor: '#EEBDA2',
         tooltipBackground: '#3d1f1a',
@@ -282,19 +282,19 @@ const answersToThemeMapping = new Map([
     ['a1,a1,a1', 'young_fattie'],
     ['a1,a1,a2', 'mid_years_man'],
     ['a1,a1,a3', 'thinness'],
-    ['a1,a1,a4', 'a3th_years_man'],
+    ['a1,a1,a4', 'oldman'],
     ['a1,a2,a1', 'young_fattie'],
     ['a1,a2,a2', 'mid_years_man'],
     ['a1,a2,a3', 'thinness'],
-    ['a1,a2,a4', 'a3th_years_man'],
+    ['a1,a2,a4', 'oldman'],
     ['a1,a3,a1', 'young_fattie'],
     ['a1,a3,a2', 'mid_years_man'],
     ['a1,a3,a3', 'shchif'],
-    ['a1,a3,a4', 'a3th_years_man'],
+    ['a1,a3,a4', 'oldman'],
     ['a1,a4,a1', 'young_fattie'],
     ['a1,a4,a2', 'mid_years_man'],
     ['a1,a4,a3', 'shchif'], // missing theme
-    ['a1,a4,a4', 'a3th_years_man'],
+    ['a1,a4,a4', 'oldman'],
     ['a2,a1,a1', 'fattie_black'],
     ['a2,a1,a2', 'blonde'],
     ['a2,a1,a3', 'normal_girl'],
