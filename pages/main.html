@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Shape</title>
+    <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body class="hidden">
+<div id="page-title">
+    <img src="../svgs/elements/title.svg" alt="The Shape Title" />
+</div>
+<div id="sidebar">
+    <div class="brush-button bloat"  onclick="selectBrush('bloat')">
+        <img src="../svgs/buttons/bloat.svg" alt="Bloat" />
+        <span class="tooltip">How much space does the past consume in your mind?</span>
+    </div>
+    <div class="brush-button pucker"  onclick="selectBrush('pucker')">
+        <img src="../svgs/buttons/pucker.svg" alt="Pucker" />
+        <span class="tooltip">How do you shrink yourself?</span>
+    </div>
+    <div class="brush-button smudge"  onclick="selectBrush('smudge')">
+        <img src="../svgs/buttons/smudge.svg" alt="Smudge" />
+        <span class="tooltip">How often do you push yourself aside for others?</span>
+    </div>
+    <div class="brush-button vortex"  onclick="selectBrush('vortex')">
+        <img src="../svgs/buttons/vortex.svg" alt="Vortex" />
+        <span class="tooltip">How frustrated are you right now?</span>
+    </div>
+    <div class="brush-button reconstruct"  onclick="selectBrush('reconstruct')">
+        <img src="../svgs/buttons/reconstruct.svg" alt="Reconstruct" />
+        <span class="tooltip">How often do you replay scenes no one else remembers?</span>
+    </div>
+</div>
+
+<div id="container">
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div id="brush-overlay"></div>
+    </div>
+</div>
+
+<div id="scale">
+    <img src="../svgs/elements/scale3.svg" alt="Scale" />
+    <div id="scale-indicator">
+        <div id="scale-value">
+            <span class="scale-value-number">0</span><span class="scale-value-suffix">%</span>
+        </div>
+        <div class="scale-arrow-spacer"></div>
+        <img src="../svgs/elements/arrow.svg" alt="Arrow" />
+    </div>
+</div>
+<div id="im-ready-button">
+    <img src="../svgs/buttons/i_m_done.svg" alt="I'm Ready Button" />
+</div>
+
+<script src="../src/main.js"></script>
+</body>
+</html>

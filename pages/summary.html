@@ -1,0 +1,41 @@
+<head>
+  <meta charset="UTF-8" />
+  <title>Summary</title>
+  <link rel="stylesheet" href="../style/summary.css" />
+  <script src="../src/summary.js" defer></script>
+</head>
+<body class="hidden">
+<div id="summary-container">
+  <!-- Column 1: title and button -->
+  <div class="summary-left">
+    <div id="page-title">
+      <img src="../svgs/elements/title.svg" alt="The Shape" />
+    </div>
+    <div id="done-button">
+      <img src="../svgs/buttons/done_to_gallery.svg" alt="Done Button"
+           data-hover="../svgs/buttons/done_to_gallery_hover.svg"
+           data-src="../svgs/buttons/done_to_gallery.svg"/>
+    </div>
+  </div>
+
+  <!-- Column 2: vertical bar -->
+  <div class="summary-bar">
+    <img src="../svgs/barfilling/bar.svg" alt="Progress Bar" class="bar" id="bar-fill-img" />
+  </div>
+
+  <!-- Column 3: scale + text -->
+  <div class="summary-text-block">
+    <div class="scale-value">70%</div>
+    <img src="../svgs/elements/shall_we.svg" alt="Shall We" class="shall-we" />
+    <img id="summary-text-svg" src="../svgs/texts/60-70.svg" alt="Summary Text" class="summary-text-svg" />
+  </div>
+
+  <!-- Column 4: final image -->
+  <div class="summary-image">
+    <canvas id="summary-canvas"></canvas>
+  </div>
+</div>
+</body>
+
+
+

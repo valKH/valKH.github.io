@@ -1,0 +1,52 @@
+body.hidden {
+    visibility: hidden;
+}
+body.ready {
+    visibility: visible;
+    transition: visibility 0s ease-in-out;
+}
+
+.intro-screen {
+    background-color: #D3B6A1;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;     /* all elements align to left */
+    position: absolute;
+    bottom: 12.78vh;
+    left: 11.82vw;
+}
+
+.intro-title {
+    width: 40vw;
+    height: auto;
+}
+
+.intro-subtitle {
+    margin-top: 2.4vh;
+    width: 32vw;
+    height: auto;
+}
+
+.intro-button {
+    margin-top: 9.8vh;            /* space from subtitle */
+    width: 20vw;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.intro-button:hover {
+    transform: scale(1.05);
+}
