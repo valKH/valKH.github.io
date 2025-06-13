@@ -191,4 +191,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             img.setAttribute('src', `${src}?t=${Date.now()}`);
         }
     });
+
+    const logo = document.querySelector('#gallery-title');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    }
 });

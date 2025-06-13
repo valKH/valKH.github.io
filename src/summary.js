@@ -119,5 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'gallery.html';
     });
 
+    const logo = document.querySelector('#page-title');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    }
 });
 

@@ -62,6 +62,7 @@ body.ready {
 }
 
 #page-title {
+    cursor: pointer;
     position: absolute;
     top: 4.82vh;         /* Match main page */
     left: 4.12vw;

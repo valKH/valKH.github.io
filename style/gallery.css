@@ -16,6 +16,7 @@ body {
 }
 
 #gallery-title {
+    cursor: pointer;
     width: 4.4vw;
     height: auto;
     margin-top: 4vh;

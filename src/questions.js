@@ -56,4 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const logo = document.querySelector('#page-title');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    }
 });

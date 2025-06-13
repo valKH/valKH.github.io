@@ -854,5 +854,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log("Calling applyTheme...");
     await applyTheme(getThemeFromAnswers()); // Change to desired theme group name
     console.log("Theme applied.");
-// Canvas setup - ends here
+    // Canvas setup - ends here
+
+    const logo = document.querySelector('#page-title');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = '../index.html';
+        });
+    }
 });
