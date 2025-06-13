@@ -62,8 +62,12 @@ async function loadSVGtoCanvasHighRes(url, themeBaseColor = 'white') {
         workingImageData.data.set(initialImageData.data);
 
         totalPixels = canvas.width * canvas.height;
+        console.log("Image loaded:", url);
     };
-    img.src = urlObject;
+    img.onerror = () => {
+        console.error("Image failed to load:", url);
+    };
+    img.src = urlObject + '?t=' + Date.now();
 }
 
 const brushButtonMapping = {
@@ -409,7 +413,7 @@ function drawBrushCursor() {
     ctx.beginPath();
     ctx.arc(brushCursor.x, brushCursor.y, brushRadius, 0, Math.PI * 2);
     ctx.strokeStyle = 'white';
-    ctx.lineWidth = 1 * scaleFactor;
+    ctx.lineWidth = scaleFactor;
     ctx.stroke();
 
     if (holdPosition) {
