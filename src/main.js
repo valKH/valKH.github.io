@@ -154,7 +154,7 @@ const themes = {
         tooltipBackground: '#3d1f1a',
         tooltipTextColor: '#EEBDA2',
         imReadyButton: '../svgs/buttons/i_m_done.svg',
-        imReadyHoverButton: '../svgs/themes/3th_years_man/i_m_done_chosen.svg'
+        imReadyHoverButton: '../svgs/themes/oldman/i_m_done_chosen.svg'
     },
     a3th_years_woman: {
         bodySVG: '../svgs/themes/3th_years_woman/3th_years_woman.svg',
