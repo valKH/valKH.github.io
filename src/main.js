@@ -327,10 +327,6 @@ function getThemeFromAnswers() {
     console.log(`Selected theme based on answers: ${selectedTheme}`);
     return selectedTheme;
 }
-// Load initial SVG
-applyTheme(getThemeFromAnswers()); // Change to desired theme group name
-// Canvas setup - ends here
-
 
 let modifiedPixels = new Set();
 
@@ -816,7 +812,7 @@ document.getElementById('im-ready-button').addEventListener('click', () => {
     window.location.href = 'summary.html';
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // Delay rendering until all images are fully loaded
     document.body.classList.add('hidden');
 
@@ -848,4 +844,8 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttribute('src', `${src}?t=${Date.now()}`);
         }
     });
+
+    // Load initial SVG
+    await applyTheme(getThemeFromAnswers()); // Change to desired theme group name
+// Canvas setup - ends here
 });
