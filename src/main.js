@@ -119,7 +119,7 @@ async function applyTheme(groupName) {
     updateBrushButtonMappingFromTheme(theme)
 
     // 4. Update body SVG on canvas
-    loadSVGtoCanvasHighRes(theme.bodySVG, theme.backgroundColor);
+    await loadSVGtoCanvasHighRes(theme.bodySVG, theme.backgroundColor);
 
     // 5. Update "I'm Ready" button SVG
     const imReadyButton = document.getElementById('im-ready-button');
